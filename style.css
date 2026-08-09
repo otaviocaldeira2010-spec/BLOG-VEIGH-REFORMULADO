@@ -1,1 +1,627 @@
+/* ================================
+   CONFIGURAÇÕES GERAIS
+================================ */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #dcecf2;
+    color: #172f38;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 50px;
+
+    background-color: rgba(29, 70, 82, 0.96);
+
+    position: fixed;
+    width: 100%;
+    top: 0;
+
+    z-index: 1000;
+
+    border-bottom: 2px solid #d5a84b;
+
+    backdrop-filter: blur(10px);
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+
+    color: #f0c866;
+
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #f5f7f4;
+    text-decoration: none;
+    font-weight: 700;
+
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f0c866;
+}
+
+
+/* ================================
+   HERO / HEADER
+================================ */
+
+.hero {
+    min-height: 70vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b9dce5 0%,
+            #d8e9e7 45%,
+            #e5c777 100%
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 120px 20px 60px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    border-radius: 50%;
+
+    top: -250px;
+    left: -150px;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    background: rgba(214, 168, 75, 0.18);
+
+    border-radius: 50%;
+
+    bottom: -250px;
+    right: -100px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ================================
+   FOTO DO VEIGH
+================================ */
+
+.hero-photo {
+    width: 280px;
+    height: 280px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 7px solid #e0b957;
+
+    box-shadow:
+        0 10px 35px rgba(29, 70, 82, 0.35),
+        0 0 0 10px rgba(255, 255, 255, 0.25);
+
+    margin-bottom: 25px;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-photo:hover {
+    transform: scale(1.03);
+
+    box-shadow:
+        0 15px 45px rgba(29, 70, 82, 0.4),
+        0 0 0 10px rgba(224, 185, 87, 0.25);
+}
+
+
+/* ================================
+   TEXTO DO HERO
+================================ */
+
+.hero-content p {
+    font-size: 1.2rem;
+
+    color: #284f5b;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+
+    max-width: 600px;
+}
+
+
+/* ================================
+   BOTÃO CURTIR
+================================ */
+
+.btn-like {
+    background-color: #d4a94f;
+
+    color: #17343d;
+
+    border: none;
+
+    padding: 12px 24px;
+
+    font-size: 1rem;
+
+    font-weight: 700;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        background-color 0.3s,
+        box-shadow 0.3s;
+}
+
+.btn-like:hover {
+    background-color: #e7c76e;
+
+    transform: scale(1.05);
+
+    box-shadow: 0 5px 18px rgba(29, 70, 82, 0.25);
+}
+
+
+/* ================================
+   CONTAINER
+================================ */
+
+.container {
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 40px 20px;
+}
+
+
+/* ================================
+   SEÇÕES
+================================ */
+
+section {
+    padding: 60px 0;
+
+    border-bottom: 1px solid rgba(29, 70, 82, 0.15);
+}
+
+h2 {
+    font-size: 2.3rem;
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+    color: #b2872e;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* ================================
+   LINHA DO TEMPO
+================================ */
+
+.timeline {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
+}
+
+.timeline-item {
+    background: rgba(255, 255, 255, 0.72);
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    border-left: 5px solid #d4a94f;
+
+    box-shadow: 0 4px 20px rgba(29, 70, 82, 0.15);
+}
+
+.timeline-item:nth-child(even) {
+    border-left: none;
+
+    border-right: 5px solid #76aebb;
+}
+
+.timeline-text h3 {
+    font-size: 1.6rem;
+
+    margin-bottom: 12px;
+
+    color: #2d6877;
+}
+
+.timeline-text p {
+    color: #29464e;
+}
+
+
+/* ================================
+   GRID DE MÚSICAS
+================================ */
+
+.music-grid {
+    display: flex;
+
+    gap: 20px;
+}
+
+.music-card {
+    background:
+        linear-gradient(
+            135deg,
+            #75aeba,
+            #c4dfe4
+        );
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    flex: 1;
+
+    text-align: center;
+
+    border: 1px solid #d4a94f;
+
+    box-shadow: 0 5px 18px rgba(29, 70, 82, 0.15);
+}
+
+.music-card h3 {
+    margin-bottom: 15px;
+
+    color: #173b46;
+}
+
+.music-card p {
+    color: #29464e;
+}
+
+
+/* ================================
+   FAQ
+================================ */
+
+.faq-box {
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+}
+
+.faq-question {
+    width: 100%;
+
+    background: #477f8d;
+
+    border: 1px solid #d4a94f;
+
+    color: #ffffff;
+
+    padding: 15px;
+
+    text-align: left;
+
+    font-size: 1.1rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    border-radius: 6px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background: #396d7a;
+}
+
+.faq-answer {
+    max-height: 0;
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    transition: max-height 0.3s ease-out;
+
+    padding: 0 15px;
+
+    color: #29464e;
+}
+
+.faq-answer p {
+    padding: 15px 0;
+}
+
+
+/* ================================
+   SISTEMA DE COMENTÁRIOS
+================================ */
+
+#comment-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    max-width: 600px;
+
+    margin: 0 auto 40px auto;
+}
+
+#comment-form input,
+#comment-form textarea {
+    background: #f4f8f7;
+
+    border: 1px solid #76aebb;
+
+    color: #17343d;
+
+    padding: 12px;
+
+    border-radius: 6px;
+
+    font-family: inherit;
+}
+
+#comment-form input:focus,
+#comment-form textarea:focus {
+    outline: none;
+
+    border-color: #d4a94f;
+
+    box-shadow: 0 0 0 2px rgba(212, 169, 79, 0.15);
+}
+
+.btn-submit {
+    background: #d4a94f;
+
+    color: #17343d;
+
+    border: none;
+
+    padding: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    border-radius: 6px;
+
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-submit:hover {
+    background: #e4c064;
+
+    transform: translateY(-2px);
+}
+
+.comments-list {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.comment-card {
+    background: rgba(255, 255, 255, 0.75);
+
+    padding: 15px;
+
+    border-radius: 6px;
+
+    border-left: 3px solid #76aebb;
+
+    box-shadow: 0 3px 12px rgba(29, 70, 82, 0.1);
+}
+
+.comment-card strong {
+    color: #b2872e;
+
+    display: block;
+
+    margin-bottom: 5px;
+}
+
+
+/* ================================
+   CONTATO
+================================ */
+
+.contact-section {
+    text-align: center;
+}
+
+.contact-section p {
+    color: #29464e;
+}
+
+.email-btn {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    background: #d4a94f;
+
+    color: #17343d;
+
+    padding: 15px 30px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    border-radius: 6px;
+
+    border: 1px solid #b2872e;
+
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.email-btn:hover {
+    background: #e5c46b;
+
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    text-align: center;
+
+    padding: 40px;
+
+    background: #2b5966;
+
+    font-size: 0.9rem;
+
+    color: #e9f1ef;
+
+    border-top: 2px solid #d4a94f;
+}
+
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .navbar .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-links li {
+        margin-left: 10px;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        min-height: 65vh;
+
+        padding-top: 120px;
+    }
+
+    .hero-photo {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .music-grid {
+        flex-direction: column;
+    }
+
+    .timeline-item {
+        padding: 22px;
+    }
+
+    .timeline-text h3 {
+        font-size: 1.35rem;
+    }
+}
